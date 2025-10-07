@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arsenal Medieval e Império</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #FFD39B;
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(135deg, #c8102e, #8b0000);
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+      opacity: 0.5;
+    }
+    .header-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .templar-cross {
+      width: 500px;
+      margin-bottom: 50px;
+      animation: fadeIn 1s ease-out;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3.5em;
+      font-weight: 800;
+      animation: fadeInDown 1s ease-out;
+    }
+    header p {
+      margin: 15px 0 0;
+      font-size: 1.3em;
+      font-weight: 400;
+      opacity: 0.85;
+    }
+    nav {
+      background: #8b0000;
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2em;
+      transition: all 0.3s ease;
+      padding: 8px 16px;
+      border-radius: 20px;
+    }
+    nav a:hover {
+      background: #c8102e;
+      color: #ffd700;
+      transform: translateY(-2px);
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1400px;
+      margin: auto;
+    }
+    section h2 {
+      font-size: 2.5em;
+      color: #CD2626;
+      border-bottom: 4px solid #c8102e;
+      padding-bottom: 15px;
+      margin-bottom: 40px;
+      font-weight: 600;
+      text-align: center;
+      animation: fadeIn 1s ease-out;
+    }
+    .categoria {
+      margin-bottom: 50px;
+    }
+    .categoria h3 {
+      font-size: 2em;
+      color: #8b0000;
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .produto {
+      background: #fff;
+      border: none;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 1s ease-out;
+      display: flex;
+      flex-direction: column;
+      min-height: 00px; /* Altura mínima fixa para consistência, independente da imagem */
+      justify-content: space-between; /* Alinha botão na base */
+    }
+    .produto:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 50px 24px rgba(0, 0, 0, 0.2);
+    }
+    .produto img {
+      width: 100%;
+      height: 600px; /* Altura fixa para que a imagem se adapte ao container sem forçar altura excessiva */
+      object-fit: cover; /* Crop para cobrir a área uniformemente sem distorção */
+      border-radius: 12px;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+      cursor: pointer; /* Indica que é clicável */
+    }
+    .produto img:hover {
+      transform: scale(1.05);
+    }
+    .produto h3 {
+      font-size: 1.6em;
+      margin: 10px 0;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+    .produto .descricao {
+      color: #555;
+      font-size: 1em;
+      line-height: 1.5;
+      margin-bottom: 15px;
+      flex-grow: 1; /* Faz a descrição ocupar espaço disponível */
+      min-height: 80px; /* Altura mínima ajustada */
+      display: flex;
+      align-items: center;
+    }
+    .produto .especificacoes {
+      margin-bottom: 15px;
+      font-size: 0.95em;
+    }
+    .produto .especificacoes strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #CD2626;
+    }
+    .whatsapp-link {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 1em;
+      font-weight: 500;
+      transition: background 0.3s ease;
+      align-self: center; /* Centraliza o botão */
+    }
+    .whatsapp-link:hover {
+      background: #128C7E;
+    }
+    footer {
+      background: linear-gradient(135deg, #8b0000, #c8102e);
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+      margin-top: 60px;
+      font-size: 1em;
+      font-weight: 400;
+    }
+    .sobre-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      align-items: start;
+    }
+    .sobre-content img, .sobre-content iframe {
+      width: 100%;
+      height: 200px; /* Mesma altura das imagens dos produtos */
+      object-fit: cover; /* Para imagens */
+      border-radius: 12px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+      animation: fadeInUp 1s ease-out;
+    }
+    .sobre-content iframe {
+      object-fit: none; /* Iframe não usa object-fit */
+    }
+    .sobre-content img:hover, .sobre-content iframe:hover {
+      transform: scale(1.1);
+    }
+    /* Estilos para o modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      animation: fadeIn 0.3s ease-out;
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 90%;
+      max-width: 800px;
+      height: 90%;
+      max-height: 90vh;
+      object-fit: contain;
+      padding-top: 60px;
+    }
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1002;
+    }
+    .close:hover {
+      color: #c8102e;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5em;
+      }
+      .templar-cross {
+        width: 60px;
+      }
+      nav {
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      section {
+        padding: 50px 15px;
+      }
+      .produtos, .sobre-content {
+        grid-template-columns: 1fr;
+      }
+      .produto {
+        min-height: 450px; /* Ajuste para mobile com imagem adaptada */
+        padding: 15px;
+      }
+      .produto img {
+        height: 200px; /* Imagem adaptada para mobile */
+      }
+      .produto h3 {
+        font-size: 1.4em;
+      }
+      .produto .descricao {
+        font-size: 0.95em;
+        min-height: 70px;
+      }
+      .sobre-content img, .sobre-content iframe {
+        height: 150px; /* Imagens e vídeo menores em mobile */
+      }
+      .modal-content {
+        width: 95%;
+        height: 95%;
+        padding-top: 40px;
+      }
+      .close {
+        font-size: 30px;
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="/root/6.jpg" alt="Cruz dos Templários" class="templar-cross">
+      <h1>Arsenal Medieval</h1>
+      <p>Espadas • Armaduras • Canhões</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#clientes">Clientes</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+<section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>
+      A <strong>Arsenal Medieval</strong> é especializada na criação artesanal de espadas, armaduras e canhões históricos, com fidelidade aos períodos medievais. Atendemos colecionadores, hotéis temáticos, clubes, castelos, fortalezas, museus e órgãos governamentais. Oferecemos também serviços de restauração de espadas militares e armaduras medievais, garantindo autenticidade e qualidade.
+    </p>
+    <div class="sobre-content">
+      <img src="/root/sobre1.jpg" alt="Foto da Oficina Arsenal Medieval">
+      <img src="/root/sobre2.jpg" alt="Foto de Peça Artesanal">
+      <iframe src="https://www.youtube.com/embed/Mjnd0zFOreI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section id="produtos">
+    <h2>Nossos Produtos</h2>
+    
+    <div class="categoria">
+      <h3>Espadas</h3>
+      <div class="produtos">
+        <div class="produto">
+          <img src="/root/9.jpg" alt="Espada Carlos Magno" onclick="openModal(this.src)">
+          <h3>Espada Medieval Carlos Magno</h3>
+          <p class="descricao">A lendária espada "Joyeuse", associada a Carlos Magno, símbolo de poder e glória.</p>
+          <div class="especificacoes">
+            <strong>Comprimento total: 98 cm</strong>
+            <strong>Comprimento da lâmina: 81 cm</strong>
+            <strong>Largura: 20 cm</strong>
+            <strong>Peso: 1,7 kg</strong>
+          </div>
+          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Espada%20Carlos%20Magno" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        
+        <div class="produto">
+          <img src="/root/1.jpg" alt="Espada Longa Medieval" onclick="openModal(this.src)">
+          <h3>Espada roldán inox</h3>
+          <p class="descricao">Espada de duas mãos usada por cavaleiros medievais, ideal para combates intensos.</p>
+          <div class="especificacoes">
+            <strong>Comprimento: 130 cm</strong>
+            <strong>Peso: 3 kg</strong>
+          </div>
+          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Espada%20Longa%20Medieval" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        
+        <div class="produto">
+          <img src="/root/8.jpg" alt="Espada Roldán" onclick="openModal(this.src)">
+          <h3>Espada Medieval Roldán</h3>
+          <p class="descricao">Inspirada em Roldán, comandante franco morto na Batalha de Roncesvalles em 778 contra os Vascones.</p>
+          <div class="especificacoes">
+            <strong>Comprimento da lâmina: 81 cm</strong>
+            <strong>Largura: 20 cm</strong>
+            <strong>Peso: 1,7 kg</strong>
+          </div>
+          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Espada%20Roldán" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        
+        <div class="produto">
+          <img src="/root/20.jpg" alt="Gládio" onclick="openModal(this.src)">
+          <h3>esgotado</h3>
+          <p class="descricao">Espada romana curta, usada por legionários até o início da Idade Média.</p>
+          <div class="especificacoes">
+            <strong>Comprimento: 90 cm</strong>
+            <strong>Peso: 1,5 kg</strong>
+          </div>
+          <a href="https://wa.me/5513991585648?text=Interesse%20no%20Gládio" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="categoria">
+      <h3>Armaduras</h3>
+      <div class="produtos">
+        <div class="produto">
+          <img src="/root/17.jpg" alt="Armadura Envelhecida" onclick="openModal(this.src)">
+          <h3>Armadura Medieval Envelhecida</h3>
+          <p class="descricao">Armadura completa em aço carbono ou inoxidável, com placas articuladas para corte, torneios e batalhas.</p>
+          <div class="especificacoes">
+            <strong>Comprimento: 190 cm</strong>
+            <strong>Peso: 25 kg</strong>
+          </div>
+          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20Envelhecida" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        
+        <div class="produto">
+          <img src="/root/18.jpg" alt="Escudo Brasão de Família" onclick="openModal(this.src)">
+          <h3>Escudo Brasão de Família</h3>
+          <p class="descricao">Escudo personalizado com brasão, ideal para decoração ou uso cerimonial.</p>
+          <div class="especificacoes">
+            <strong>Comprimento: 60 cm</strong>
+            <strong>Peso: 15 kg</strong>
+          </div>
+          <a href="https://wa.me/5513991585648?text=Interesse%20no%20Escudo%20Brasão%20de%20Família" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        
+        <div class="produto">
+          <img src="/root/14.jpg" alt="Armadura Polida" onclick="openModal(this.src)">
+          <h3>Armadura Medieval Polida</h3>
+          <p class="descricao">Armadura completa em aço carbono ou inoxidável, com acabamento polido para corte e torneios.</p>
+          <div class="especificacoes">
+            <strong>Comprimento: 190 cm</strong>
+            <strong>Peso: 25 kg</strong>
+          </div>
+          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20Polida" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        
+        <div class="produto">
+          <img src="/root/13.jpg" alt="Elmo Medieval" onclick="openModal(this.src)">
+          <h3>Elmo Medieval</h3>
+          <p class="descricao">Capacete medieval com viseira móvel, ideal para proteção em combates e cerimônias.</p>
+          <div class="especificacoes">
+            <strong>Comprimento: 50 cm</strong>
+            <strong>Peso: 1 kg</strong>
+          </div>
+          <a href="https://wa.me/5513991585648?text=Interesse%20no%20Elmo%20Sallet" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="categoria">
+      <h3>Canhões</h3>
+      <div class="produtos">
+        <div class="produto">
+          <img src="/root/16.jpg" alt="Canhão Bombarda" onclick="openModal(this.src)">
+          <h3>Canhão Bombarda</h3>
+          <p class="descricao">Artilharia pesada do século XIV, projetada para disparar projéteis de pedra em fortalezas.</p>
+          <div class="especificacoes">
+            <strong>Comprimento: 1 m</strong>
+            <strong>Peso: 60 kg</strong>
+          </div>
+          <a href="https://wa.me/5513991585648?text=Interesse%20no%20Canhão%20Bombarda" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        
+        <div class="produto">
+          <img src="/root/21.jpg" alt="Canhão Naval" onclick="openModal(this.src)">
+          <h3>Canhão Naval</h3>
+          <p class="descricao">Canhão do século XV com brasão imperial, montado em berço de madeira com rodas cavilhadas.</p>
+          <div class="especificacoes">
+            <strong>Comprimento: 1,5 m</strong>
+            <strong>Peso: 300 kg</strong>
+          </div>
+          <a href="https://wa.me/5513991585648?text=Interesse%20no%20Canhão%20Naval" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        
+        <div class="produto">
+          <img src="/root/5.jpg" alt="Canhão de Infantaria" onclick="openModal(this.src)">
+          <h3>Canhão de Espanhol/Portugues união ibérica</h3>
+          <p class="descricao">Canhão leve usado em fortificações e campos de batalha, ideal para mobilidade.</p>
+          <div class="especificacoes">
+            <strong>Comprimento: 1,5 m</strong>
+            <strong>Peso: 300 kg</strong>
+          </div>
+          <a href="https://wa.me/5513991585648?text=Interesse%20no%20Canhão%20de%20Infantaria" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        
+        <div class="produto">
+          <img src="/root/15.jpg" alt="Canhão Naval Inglês" onclick="openModal(this.src)">
+          <h3>Canhã Naval Inglês</h3>
+          <p class="descricao">Canhão usado em galeões e fortalezas, com brasão britânico e design robusto.</p>
+          <div class="especificacoes">
+            <strong>Comprimento: 1,5 m</strong>
+            <strong>Peso: 300 kg</strong>
+          </div>
+          <a href="https://wa.me/5513991585648?text=Interesse%20no%20Canhão%20Naval%20Inglês" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clientes">
+    <h2>Clientes</h2>
+    <p>
+      Atendemos colecionadores particulares, hotéis temáticos, clubes, castelos, fortalezas, museus e projetos governamentais. Nossas peças estão presentes em exposições no Brasil e no exterior, garantindo autenticidade e qualidade.
+    </p>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>
+      📞 Telefone: <a href="https://wa.me/5513991585648" target="_blank">(13) 99158-5648</a><br>
+      👤 Tratar com: Rômulo Ceccarelli<br>
+      📍 Endereço: Av. Galeão Coutinho, 714 - Vila Jóquei Clube<br>
+      São Vicente - SP, CEP 11365-000
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Arsenal Medieval - Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Modal para visualização em tela cheia -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <script>
+    function openModal(src) {
+      var modal = document.getElementById("imageModal");
+      var modalImg = document.getElementById("modalImg");
+      modal.style.display = "block";
+      modalImg.src = src;
+    }
+
+    function closeModal() {
+      var modal = document.getElementById("imageModal");
+      modal.style.display = "none";
+    }
+
+    // Fechar o modal ao clicar fora da imagem
+    var modal = document.getElementById("imageModal");
+    modal.onclick = function(event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+
+    // Fechar o modal com a tecla ESC
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
