@@ -7,9 +7,6 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5932203345016255"
-     crossorigin="anonymous"></script>
-
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -124,8 +121,8 @@
       animation: fadeInUp 1s ease-out;
       display: flex;
       flex-direction: column;
-      min-height: 00px; /* Altura mínima fixa para consistência, independente da imagem */
-      justify-content: space-between; /* Alinha botão na base */
+      min-height: 00px;
+      justify-content: space-between;
     }
     .produto:hover {
       transform: translateY(-10px);
@@ -133,12 +130,12 @@
     }
     .produto img {
       width: 100%;
-      height: 600px; /* Altura fixa para que a imagem se adapte ao container sem forçar altura excessiva */
-      object-fit: cover; /* Crop para cobrir a área uniformemente sem distorção */
+      height: 600px;
+      object-fit: cover;
       border-radius: 12px;
       margin-bottom: 15px;
       transition: transform 0.3s ease;
-      cursor: pointer; /* Indica que é clicável */
+      cursor: pointer;
     }
     .produto img:hover {
       transform: scale(1.05);
@@ -154,8 +151,8 @@
       font-size: 1em;
       line-height: 1.5;
       margin-bottom: 15px;
-      flex-grow: 1; /* Faz a descrição ocupar espaço disponível */
-      min-height: 80px; /* Altura mínima ajustada */
+      flex-grow: 1;
+      min-height: 80px;
       display: flex;
       align-items: center;
     }
@@ -178,7 +175,7 @@
       font-size: 1em;
       font-weight: 500;
       transition: background 0.3s ease;
-      align-self: center; /* Centraliza o botão */
+      align-self: center;
     }
     .whatsapp-link:hover {
       background: #128C7E;
@@ -200,20 +197,19 @@
     }
     .sobre-content img, .sobre-content iframe {
       width: 100%;
-      height: 200px; /* Mesma altura das imagens dos produtos */
-      object-fit: cover; /* Para imagens */
+      height: 200px;
+      object-fit: cover;
       border-radius: 12px;
       margin-bottom: 20px;
       transition: transform 0.3s ease;
       animation: fadeInUp 1s ease-out;
     }
     .sobre-content iframe {
-      object-fit: none; /* Iframe não usa object-fit */
+      object-fit: none;
     }
     .sobre-content img:hover, .sobre-content iframe:hover {
       transform: scale(1.1);
     }
-    /* Estilos para o modal */
     .modal {
       display: none;
       position: fixed;
@@ -278,11 +274,11 @@
         grid-template-columns: 1fr;
       }
       .produto {
-        min-height: 450px; /* Ajuste para mobile com imagem adaptada */
+        min-height: 450px;
         padding: 15px;
       }
       .produto img {
-        height: 200px; /* Imagem adaptada para mobile */
+        height: 200px;
       }
       .produto h3 {
         font-size: 1.4em;
@@ -292,7 +288,7 @@
         min-height: 70px;
       }
       .sobre-content img, .sobre-content iframe {
-        height: 150px; /* Imagens e vídeo menores em mobile */
+        height: 150px;
       }
       .modal-content {
         width: 95%;
@@ -311,7 +307,7 @@
     <div class="header-content">
       <img src="/root/6.jpg" alt="Cruz dos Templários" class="templar-cross">
       <h1>Arsenal Medieval</h1>
-      <p>Espadas • Armaduras • Canhões</p>
+      <p>Espadas • Armaduras</p>
     </div>
   </header>
 
@@ -322,19 +318,11 @@
     <a href="#contato">Contato</a>
   </nav>
 
-<section id="sobre">
+  <section id="sobre">
     <h2>Sobre Nós</h2>
     <p>
-      A <strong>Arsenal Medieval</strong> é especializada na criação artesanal de espadas, armaduras e canhões históricos, com fidelidade aos períodos medievais e império. Atendemos colecionadores, hotéis temáticos, clubes, castelos, fortalezas, museus e órgãos governamentais. Oferecemos também serviços de restauração de espadas militares e armaduras medievais, garantindo autenticidade e qualidade.
+      A <strong>Arsenal Medieval</strong> é especializada na criação artesanal de espadas e armaduras históricas, com fidelidade aos períodos medievais e império. Atendemos colecionadores, hotéis temáticos, clubes, castelos, fortalezas, museus e órgãos governamentais. Oferecemos também serviços de restauração de espadas militares e armaduras medievais, garantindo autenticidade e qualidade.
     </p>
-    <div class="sobre-content">
-      <img src="/root/sobre1.jpg" alt="Foto da Oficina Arsenal Medieval">
-      <img src="/root/sobre2.jpg" alt="Foto de Peça Artesanal">
-      <img src="/root/sobre3.jpg" alt="Foto de Peça Artesanal">
-      <img src="/root/sobre4.jpg" alt="Foto de Peça Artesanal">
-      <img src="/root/sobre5.jpg" alt="Foto de Peça Artesanal">
-      <iframe src="https://www.youtube.com/embed/Mjnd0zFOreI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
   </section>
 
   <section id="produtos">
@@ -417,7 +405,7 @@
           <a href="https://wa.me/5513991585648?text=Interesse%20no%20Escudo%20Brasão%20de%20Família" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
 
-         <div class="produto">
+        <div class="produto">
           <img src="/root/50.jpg" alt="Armadura inox" onclick="openModal(this.src)">
           <h3>Armadura Medieval inox</h3>
           <p class="descricao">Armadura Medieval com gravaçao em aço inox para áreas externas.</p>
@@ -426,73 +414,63 @@
             <strong>Peso: 25 kg</strong>
           </div>
           <a href="https://wa.me/5513991585648?text=Interesse%na%armadura%medieval%inox" class="whatsapp-link" target="_blank">Saiba mais</a>
-         </div>
+        </div>
 
-        <!-- Armadura Europeia Gravada N.5 -->
+        <div class="produto">
+          <img src="/root/n.6.jpg" alt="Armadura Europeia com Alabarda" onclick="openModal(this.src)">
+          <h3>Armadura Europeia com Alabarda N.6</h3>
+          <p class="descricao">Armadura completa equipada com alabarda, típica de guardas cerimoniais europeus.</p>
+          <div class="especificacoes">
+            <strong>Altura: 190 cm</strong>
+            <strong>Peso: 27 kg</strong>
+          </div>
+          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20com%20Alabarda%20N.6" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
 
+        <div class="produto">
+          <img src="/root/n.7.jpg" alt="Armadura Europeia com Alabarda" onclick="openModal(this.src)">
+          <h3>Armadura Europeia com Alabarda N.7</h3>
+          <p class="descricao">Armadura europeia tradicional com alabarda, perfeita para halls, castelos e fortalezas.</p>
+          <div class="especificacoes">
+            <strong>Altura: 190 cm</strong>
+            <strong>Peso: 27 kg</strong>
+          </div>
+          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20com%20Alabarda%20N.7" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
 
-<!-- Armadura Europeia com Alabarda N.6 -->
-<div class="produto">
-  <img src="/root/n.6.jpg" alt="Armadura Europeia com Alabarda" onclick="openModal(this.src)">
-  <h3>Armadura Europeia com Alabarda N.6</h3>
-  <p class="descricao">Armadura completa equipada com alabarda, típica de guardas cerimoniais europeus.</p>
-  <div class="especificacoes">
-    <strong>Altura: 190 cm</strong>
-    <strong>Peso: 27 kg</strong>
-  </div>
-  <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20com%20Alabarda%20N.6" class="whatsapp-link" target="_blank">Saiba mais</a>
-</div>
+        <div class="produto">
+          <img src="/root/n.8.jpg" alt="Armadura Europeia com Espada e Escudo" onclick="openModal(this.src)">
+          <h3>Armadura Europeia com Espada e Escudo N.8</h3>
+          <p class="descricao">Armadura completa segurando espada e escudo, inspirada em cavaleiros do final da Idade Média.</p>
+          <div class="especificacoes">
+            <strong>Altura: 190 cm</strong>
+            <strong>Peso: 30 kg</strong>
+          </div>
+          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20com%20Espada%20e%20Escudo%20N.8" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
 
-<!-- Armadura Europeia com Alabarda N.7 -->
-<div class="produto">
-  <img src="/root/n.7.jpg" alt="Armadura Europeia com Alabarda" onclick="openModal(this.src)">
-  <h3>Armadura Europeia com Alabarda N.7</h3>
-  <p class="descricao">Armadura europeia tradicional com alabarda, perfeita para halls, castelos e fortalezas.</p>
-  <div class="especificacoes">
-    <strong>Altura: 190 cm</strong>
-    <strong>Peso: 27 kg</strong>
-  </div>
-  <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20com%20Alabarda%20N.7" class="whatsapp-link" target="_blank">Saiba mais</a>
-</div>
+        <div class="produto">
+          <img src="/root/n.9.jpg" alt="Armadura Europeia com Espada" onclick="openModal(this.src)">
+          <h3>Armadura Europeia com Espada N.9</h3>
+          <p class="descricao">Armadura clássica empunhando espada medieval, ideal para coleções e ambientes temáticos.</p>
+          <div class="especificacoes">
+            <strong>Altura: 190 cm</strong>
+            <strong>Peso: 25 kg</strong>
+          </div>
+          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20com%20Espada%20N.9" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
 
-<!-- Armadura Europeia com Espada e Escudo N.8 -->
-<div class="produto">
-  <img src="/root/n.8.jpg" alt="Armadura Europeia com Espada e Escudo" onclick="openModal(this.src)">
-  <h3>Armadura Europeia com Espada e Escudo N.8</h3>
-  <p class="descricao">Armadura completa segurando espada e escudo, inspirada em cavaleiros do final da Idade Média.</p>
-  <div class="especificacoes">
-    <strong>Altura: 190 cm</strong>
-    <strong>Peso: 30 kg</strong>
-  </div>
-  <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20com%20Espada%20e%20Escudo%20N.8" class="whatsapp-link" target="_blank">Saiba mais</a>
-</div>
+        <div class="produto">
+          <img src="/root/n.10.jpg" alt="Armadura Europeia com Espada" onclick="openModal(this.src)">
+          <h3>Armadura Europeia com Espada N.10</h3>
+          <p class="descricao">Armadura europeia completa, segurando espada reta medieval. Ideal para halls e exposições.</p>
+          <div class="especificacoes">
+            <strong>Altura: 190 cm</strong>
+            <strong>Peso: 26 kg</strong>
+          </div>
+          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20com%20Espada%20N.10" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
 
-<!-- Armadura Europeia com Espada N.9 -->
-<div class="produto">
-  <img src="/root/n.9.jpg" alt="Armadura Europeia com Espada" onclick="openModal(this.src)">
-  <h3>Armadura Europeia com Espada N.9</h3>
-  <p class="descricao">Armadura clássica empunhando espada medieval, ideal para coleções e ambientes temáticos.</p>
-  <div class="especificacoes">
-    <strong>Altura: 190 cm</strong>
-    <strong>Peso: 25 kg</strong>
-  </div>
-  <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20com%20Espada%20N.9" class="whatsapp-link" target="_blank">Saiba mais</a>
-</div>
-
-<!-- Armadura Europeia com Espada N.10 -->
-<div class="produto">
-  <img src="/root/n.10.jpg" alt="Armadura Europeia com Espada" onclick="openModal(this.src)">
-  <h3>Armadura Europeia com Espada N.10</h3>
-  <p class="descricao">Armadura europeia completa, segurando espada reta medieval. Ideal para halls e exposições.</p>
-  <div class="especificacoes">
-    <strong>Altura: 190 cm</strong>
-    <strong>Peso: 26 kg</strong>
-  </div>
-  <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20com%20Espada%20N.10" class="whatsapp-link" target="_blank">Saiba mais</a>
-</div>
-
-        
-        
         <div class="produto">
           <img src="/root/14.jpg" alt="Armadura Polida" onclick="openModal(this.src)">
           <h3>Armadura Medieval Polida</h3>
@@ -516,55 +494,6 @@
         </div>
       </div>
     </div>
-    
-    <div class="categoria">
-      <h3>Canhões</h3>
-      <div class="produtos">
-        <div class="produto">
-          <img src="/root/16.jpg" alt="Canhão Bombarda" onclick="openModal(this.src)">
-          <h3>Canhão Bombarda</h3>
-          <p class="descricao">Artilharia pesada do século XIV, projetada para disparar projéteis de pedra em fortalezas.</p>
-          <div class="especificacoes">
-            <strong>Comprimento: 1 m</strong>
-            <strong>Peso: 60 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%20no%20Canhão%20Bombarda" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        
-        <div class="produto">
-          <img src="/root/21.jpg" alt="Canhão Naval" onclick="openModal(this.src)">
-          <h3>Canhão Naval</h3>
-          <p class="descricao">Canhão do século XV com brasão imperial, montado em berço de madeira com rodas cavilhadas.</p>
-          <div class="especificacoes">
-            <strong>Comprimento: 1,5 m</strong>
-            <strong>Peso: 300 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%20no%20Canhão%20Naval" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        
-        <div class="produto">
-          <img src="/root/5.jpg" alt="Canhão de Infantaria" onclick="openModal(this.src)">
-          <h3>Canhão de Espanhol/Portugues união ibérica</h3>
-          <p class="descricao">Canhão leve usado em fortificações e campos de batalha, ideal para mobilidade.</p>
-          <div class="especificacoes">
-            <strong>Comprimento: 1,5 m</strong>
-            <strong>Peso: 300 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%20no%20Canhão%20de%20Infantaria" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        
-        <div class="produto">
-          <img src="/root/15.jpg" alt="Canhão Naval Inglês" onclick="openModal(this.src)">
-          <h3>Canhã Naval Inglês</h3>
-          <p class="descricao">Canhão usado em galeões e fortalezas, com brasão britânico e design robusto.</p>
-          <div class="especificacoes">
-            <strong>Comprimento: 1,5 m</strong>
-            <strong>Peso: 300 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%20no%20Canhão%20Naval%20Inglês" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-      </div>
-    </div>
   </section>
 
   <section id="clientes">
@@ -579,8 +508,8 @@
     <p>
       📞 Telefone: <a href="https://wa.me/5513991585648" target="_blank">(13) 99158-5648</a><br>
       👤 Tratar com: Rômulo Ceccarelli<br>
-      📍 Endereço: Av. Galeão Coutinho, 714 - Vila Jóquei Clube<br>
-      São Vicente - SP, CEP 11365-000
+      📍 Endereço: Av. Rodrigues Alves, 177<br>
+      Santos - SP, CEP 11015-201
     </p>
   </section>
 
@@ -588,7 +517,6 @@
     <p>© 2025 Arsenal Medieval - Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Modal para visualização em tela cheia -->
   <div id="imageModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
     <img class="modal-content" id="modalImg">
@@ -607,7 +535,6 @@
       modal.style.display = "none";
     }
 
-    // Fechar o modal ao clicar fora da imagem
     var modal = document.getElementById("imageModal");
     modal.onclick = function(event) {
       if (event.target == modal) {
@@ -615,7 +542,6 @@
       }
     }
 
-    // Fechar o modal com a tecla ESC
     document.addEventListener('keydown', function(event) {
       if (event.key === 'Escape') {
         closeModal();
