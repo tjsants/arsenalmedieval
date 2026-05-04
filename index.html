@@ -3,303 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arsenal Medieval e Império</title>
+  <title>Arsenal Medieval</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
-
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #FFD39B;
-      color: #1a1a1a;
-      overflow-x: hidden;
-    }
-    header {
-      background: linear-gradient(135deg, #c8102e, #8b0000);
-      color: #fff;
-      padding: 60px 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
-      opacity: 0.5;
-    }
-    .header-content {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .templar-cross {
-      width: 500px;
-      margin-bottom: 50px;
-      animation: fadeIn 1s ease-out;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 3.5em;
-      font-weight: 800;
-      animation: fadeInDown 1s ease-out;
-    }
-    header p {
-      margin: 15px 0 0;
-      font-size: 1.3em;
-      font-weight: 400;
-      opacity: 0.85;
-    }
-    nav {
-      background: #8b0000;
-      display: flex;
-      justify-content: center;
-      gap: 35px;
-      padding: 15px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.2em;
-      transition: all 0.3s ease;
-      padding: 8px 16px;
-      border-radius: 20px;
-    }
-    nav a:hover {
-      background: #c8102e;
-      color: #ffd700;
-      transform: translateY(-2px);
-    }
-    section {
-      padding: 80px 20px;
-      max-width: 1400px;
-      margin: auto;
-    }
-    section h2 {
-      font-size: 2.5em;
-      color: #CD2626;
-      border-bottom: 4px solid #c8102e;
-      padding-bottom: 15px;
-      margin-bottom: 40px;
-      font-weight: 600;
-      text-align: center;
-      animation: fadeIn 1s ease-out;
-    }
-    .categoria {
-      margin-bottom: 50px;
-    }
-    .categoria h3 {
-      font-size: 2em;
-      color: #8b0000;
-      text-align: center;
-      margin-bottom: 30px;
-      font-weight: 600;
-    }
-    .produtos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-    .produto {
-      background: #fff;
-      border: none;
-      border-radius: 16px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeInUp 1s ease-out;
-      display: flex;
-      flex-direction: column;
-      min-height: 00px;
-      justify-content: space-between;
-    }
-    .produto:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 50px 24px rgba(0, 0, 0, 0.2);
-    }
-    .produto img {
-      width: 100%;
-      height: 600px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    .produto img:hover {
-      transform: scale(1.05);
-    }
-    .produto h3 {
-      font-size: 1.6em;
-      margin: 10px 0;
-      color: #1a1a1a;
-      font-weight: 600;
-    }
-    .produto .descricao {
-      color: #555;
-      font-size: 1em;
-      line-height: 1.5;
-      margin-bottom: 15px;
-      flex-grow: 1;
-      min-height: 80px;
-      display: flex;
-      align-items: center;
-    }
-    .produto .especificacoes {
-      margin-bottom: 15px;
-      font-size: 0.95em;
-    }
-    .produto .especificacoes strong {
-      display: block;
-      margin-bottom: 5px;
-      color: #CD2626;
-    }
-    .whatsapp-link {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 25px;
-      font-size: 1em;
-      font-weight: 500;
-      transition: background 0.3s ease;
-      align-self: center;
-    }
-    .whatsapp-link:hover {
-      background: #128C7E;
-    }
-    footer {
-      background: linear-gradient(135deg, #8b0000, #c8102e);
-      color: #fff;
-      text-align: center;
-      padding: 40px;
-      margin-top: 60px;
-      font-size: 1em;
-      font-weight: 400;
-    }
-    .sobre-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      align-items: start;
-    }
-    .sobre-content img, .sobre-content iframe {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
-      animation: fadeInUp 1s ease-out;
-    }
-    .sobre-content iframe {
-      object-fit: none;
-    }
-    .sobre-content img:hover, .sobre-content iframe:hover {
-      transform: scale(1.1);
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1001;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      animation: fadeIn 0.3s ease-out;
-    }
-    .modal-content {
-      margin: auto;
-      display: block;
-      width: 90%;
-      max-width: 800px;
-      height: 90%;
-      max-height: 90vh;
-      object-fit: contain;
-      padding-top: 60px;
-    }
-    .close {
-      position: absolute;
-      top: 15px;
-      right: 35px;
-      color: #f1f1f1;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 1002;
-    }
-    .close:hover {
-      color: #c8102e;
-    }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.5em;
-      }
-      .templar-cross {
-        width: 60px;
-      }
-      nav {
-        flex-wrap: wrap;
-        gap: 20px;
-      }
-      section {
-        padding: 50px 15px;
-      }
-      .produtos, .sobre-content {
-        grid-template-columns: 1fr;
-      }
-      .produto {
-        min-height: 450px;
-        padding: 15px;
-      }
-      .produto img {
-        height: 200px;
-      }
-      .produto h3 {
-        font-size: 1.4em;
-      }
-      .produto .descricao {
-        font-size: 0.95em;
-        min-height: 70px;
-      }
-      .sobre-content img, .sobre-content iframe {
-        height: 150px;
-      }
-      .modal-content {
-        width: 95%;
-        height: 95%;
-        padding-top: 40px;
-      }
-      .close {
-        font-size: 30px;
-        right: 20px;
-      }
-    }
+    body { margin:0; font-family:'Poppins', sans-serif; background-color:#FFD39B; color:#1a1a1a; overflow-x:hidden; }
+    header { background:linear-gradient(135deg,#c8102e,#8b0000); color:#fff; padding:60px 20px; text-align:center; }
+    .templar-cross { width:360px; max-width:80%; margin-bottom:35px; }
+    header h1 { margin:0; font-size:3.3em; font-weight:800; }
+    header p { margin:15px 0 0; font-size:1.25em; opacity:.9; }
+    nav { background:#8b0000; display:flex; justify-content:center; gap:22px; padding:15px; position:sticky; top:0; z-index:1000; flex-wrap:wrap; box-shadow:0 3px 5px rgba(0,0,0,.15); }
+    nav a { color:#fff; text-decoration:none; font-weight:600; font-size:1.05em; padding:8px 14px; border-radius:20px; }
+    nav a:hover { background:#c8102e; color:#ffd700; }
+    section { padding:70px 20px; max-width:1400px; margin:auto; }
+    section h2 { font-size:2.4em; color:#CD2626; border-bottom:4px solid #c8102e; padding-bottom:15px; margin-bottom:40px; text-align:center; }
+    .categoria { margin-bottom:60px; }
+    .categoria h3 { font-size:2em; color:#8b0000; text-align:center; margin:20px 0 30px; }
+    .produtos { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; }
+    .produto { background:#fff; border-radius:16px; padding:20px; text-align:center; box-shadow:0 8px 16px rgba(0,0,0,.1); display:flex; flex-direction:column; justify-content:space-between; }
+    .produto:hover { transform:translateY(-6px); box-shadow:0 18px 26px rgba(0,0,0,.18); }
+    .produto img { width:100%; height:430px; object-fit:cover; border-radius:12px; margin-bottom:15px; cursor:pointer; background:#eee; }
+    .produto h3 { font-size:1.35em; margin:10px 0; color:#1a1a1a; }
+    .descricao { color:#555; font-size:1em; line-height:1.5; min-height:72px; }
+    .especificacoes strong { display:block; margin-bottom:5px; color:#CD2626; }
+    .whatsapp-link { display:inline-block; background:#25D366; color:white; padding:10px 20px; text-decoration:none; border-radius:25px; font-size:1em; font-weight:600; margin-top:12px; }
+    .whatsapp-link:hover { background:#128C7E; }
+    .produto-aviso { background:#fff7e8; border:2px dashed #c8102e; }
+    footer { background:linear-gradient(135deg,#8b0000,#c8102e); color:#fff; text-align:center; padding:40px; margin-top:60px; }
+    .modal { display:none; position:fixed; z-index:1001; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,.9); }
+    .modal-content { margin:auto; display:block; width:90%; max-width:900px; height:90%; max-height:90vh; object-fit:contain; padding-top:55px; }
+    .close { position:absolute; top:15px; right:35px; color:#f1f1f1; font-size:40px; font-weight:bold; cursor:pointer; z-index:1002; }
+    @media(max-width:768px){ header h1{font-size:2.3em} .produto img{height:260px} section{padding:45px 14px} }
   </style>
 </head>
 <body>
@@ -307,557 +40,312 @@
     <div class="header-content">
       <img src="/root/6.jpg" alt="Cruz dos Templários" class="templar-cross">
       <h1>Arsenal Medieval</h1>
-      <p>Espadas • Armaduras • Espadas Militares • Restauração</p>
+      <p>Espadas • Armaduras • Peças Cerimoniais</p>
     </div>
   </header>
-
   <nav>
     <a href="#sobre">Sobre</a>
     <a href="#produtos">Produtos</a>
     <a href="#clientes">Clientes</a>
     <a href="#contato">Contato</a>
   </nav>
-
   <section id="sobre">
     <h2>Sobre Nós</h2>
-    <p>
-      A <strong>Arsenal Medieval</strong> é especializada na confecção artesanal de espadas e armaduras militares históricas, com fidelidade aos períodos medievais, Império e República.
-      Atendemos militares, colecionadores, hotéis temáticos, clubes, castelos, fortalezas, museus e órgãos governamentais.
-      Oferecemos também serviços de restauração de espadas militares e armaduras medievais, garantindo qualidade, tradição e prazo.
-    </p>
+    <p>A <strong>Arsenal Medieval</strong> é especializada na confecção artesanal de espadas e armaduras militares históricas, com fidelidade aos períodos medievais, Império e República.</p>
+    <p>Atendemos militares, colecionadores, hotéis temáticos, clubes, castelos, fortalezas, museus e órgãos governamentais.</p>
+    <p>Oferecemos também serviços de restauração de espadas militares e armaduras medievais, garantindo qualidade e prazo.</p>
   </section>
-
   <section id="produtos">
     <h2>Nossos Produtos</h2>
+    <div class="categoria">
+      <h3>ESPADAS MEDIEVAIS</h3>
+      <div class="produtos">
+        <div class="produto"><img src="/root/9.jpg" alt="Espada Carlos Magno" onclick="openModal(this.src)"><h3>Espada Medieval Carlos Magno</h3><p class="descricao">A lendária espada Joyeuse, associada a Carlos Magno, símbolo de poder e glória.</p><div class="especificacoes"><strong>Comprimento total: 98 cm</strong><strong>Comprimento da lâmina: 81 cm</strong><strong>Largura: 20 cm</strong><strong>Peso: 1,7 kg</strong></div><a href="https://wa.me/5513991585648?text=Interesse%20na%20Espada%20Carlos%20Magno" class="whatsapp-link" target="_blank">Saiba mais</a></div>
+        <div class="produto"><img src="/root/1.jpg" alt="Espada Roldán inox" onclick="openModal(this.src)"><h3>Espada Roldán inox</h3><p class="descricao">Espada de duas mãos usada por cavaleiros medievais, ideal para decoração e coleção.</p><div class="especificacoes"><strong>Comprimento: 130 cm</strong><strong>Peso: 3 kg</strong></div><a href="https://wa.me/5513991585648?text=Interesse%20na%20Espada%20Roldan%20Inox" class="whatsapp-link" target="_blank">Saiba mais</a></div>
+        <div class="produto"><img src="/root/8.jpg" alt="Espada Medieval Roldán" onclick="openModal(this.src)"><h3>Espada Medieval Roldán</h3><p class="descricao">Inspirada em Roldán, comandante franco morto na Batalha de Roncesvalles em 778.</p><div class="especificacoes"><strong>Comprimento da lâmina: 81 cm</strong><strong>Largura: 20 cm</strong><strong>Peso: 1,7 kg</strong></div><a href="https://wa.me/5513991585648?text=Interesse%20na%20Espada%20Roldan" class="whatsapp-link" target="_blank">Saiba mais</a></div>
+        <div class="produto"><img src="/root/20.jpg" alt="Gládio" onclick="openModal(this.src)"><h3>Gládio</h3><p class="descricao">Espada romana curta, usada por legionários até o início da Idade Média.</p><div class="especificacoes"><strong>Comprimento: 90 cm</strong><strong>Peso: 1,5 kg</strong></div><a href="https://wa.me/5513991585648?text=Interesse%20no%20Gladio" class="whatsapp-link" target="_blank">Saiba mais</a></div>
+      </div>
+    </div>
+    <div class="categoria"><h3>ARMADURAS</h3><div class="produtos">
+      <div class="produto"><img src="/root/17.jpg" alt="Armadura Envelhecida" onclick="openModal(this.src)"><h3>Armadura Medieval Envelhecida</h3><p class="descricao">Armadura completa em aço carbono ou inoxidável, com placas articuladas.</p><div class="especificacoes"><strong>Comprimento: 190 cm</strong><strong>Peso: 25 kg</strong></div><a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20Envelhecida" class="whatsapp-link" target="_blank">Saiba mais</a></div>
+      <div class="produto"><img src="/root/18.jpg" alt="Escudo Brasão de Família" onclick="openModal(this.src)"><h3>Escudo Brasão de Família</h3><p class="descricao">Escudo personalizado com brasão, ideal para decoração ou uso cerimonial.</p><div class="especificacoes"><strong>Comprimento: 60 cm</strong><strong>Peso: 15 kg</strong></div><a href="https://wa.me/5513991585648?text=Interesse%20no%20Escudo%20Brasao" class="whatsapp-link" target="_blank">Saiba mais</a></div>
+      <div class="produto"><img src="/root/50.jpg" alt="Armadura inox" onclick="openModal(this.src)"><h3>Armadura Medieval inox</h3><p class="descricao">Armadura Medieval com gravação em aço inox para áreas externas.</p><div class="especificacoes"><strong>Comprimento: 190 cm</strong><strong>Peso: 25 kg</strong></div><a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20Medieval%20Inox" class="whatsapp-link" target="_blank">Saiba mais</a></div>
+      <div class="produto"><img src="/root/14.jpg" alt="Armadura Polida" onclick="openModal(this.src)"><h3>Armadura Medieval Polida</h3><p class="descricao">Armadura completa com acabamento polido para decoração e exposições.</p><div class="especificacoes"><strong>Comprimento: 190 cm</strong><strong>Peso: 25 kg</strong></div><a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20Polida" class="whatsapp-link" target="_blank">Saiba mais</a></div>
+      <div class="produto"><img src="/root/13.jpg" alt="Elmo Medieval" onclick="openModal(this.src)"><h3>Elmo Medieval</h3><p class="descricao">Capacete medieval com viseira móvel, ideal para decoração e cerimônias.</p><div class="especificacoes"><strong>Comprimento: 50 cm</strong><strong>Peso: 1 kg</strong></div><a href="https://wa.me/5513991585648?text=Interesse%20no%20Elmo%20Medieval" class="whatsapp-link" target="_blank">Saiba mais</a></div>
+    </div></div>
+    <div class="categoria"><h3>ESPADAS MILITARES</h3></div>
     
-    <div class="categoria">
-      <h3>Espadas</h3>
-      <div class="produtos">
-        <div class="produto">
-          <img src="/root/9.jpg" alt="Espada Carlos Magno" onclick="openModal(this.src)">
-          <h3>Espada Medieval Carlos Magno</h3>
-          <p class="descricao">A lendária espada "Joyeuse", associada a Carlos Magno, símbolo de poder e glória.</p>
-          <div class="especificacoes">
-            <strong>Comprimento total: 98 cm</strong>
-            <strong>Comprimento da lâmina: 81 cm</strong>
-            <strong>Largura: 20 cm</strong>
-            <strong>Peso: 1,7 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Espada%20Carlos%20Magno" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        
-        <div class="produto">
-          <img src="/root/1.jpg" alt="Espada Longa Medieval" onclick="openModal(this.src)">
-          <h3>Espada Roldán inox</h3>
-          <p class="descricao">Espada de duas mãos usada por cavaleiros medievais, ideal para combates intensos.</p>
-          <div class="especificacoes">
-            <strong>Comprimento: 130 cm</strong>
-            <strong>Peso: 3 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Espada%20Longa%20Medieval" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        
-        <div class="produto">
-          <img src="/root/8.jpg" alt="Espada Roldán" onclick="openModal(this.src)">
-          <h3>Espada Medieval Roldán</h3>
-          <p class="descricao">Inspirada em Roldán, comandante franco morto na Batalha de Roncesvalles em 778 contra os Vascones.</p>
-          <div class="especificacoes">
-            <strong>Comprimento da lâmina: 81 cm</strong>
-            <strong>Largura: 20 cm</strong>
-            <strong>Peso: 1,7 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Espada%20Roldán" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        
-        <div class="produto">
-          <img src="/root/20.jpg" alt="Gládio" onclick="openModal(this.src)">
-          <h3>esgotado</h3>
-          <p class="descricao">Espada romana curta, usada por legionários até o início da Idade Média.</p>
-          <div class="especificacoes">
-            <strong>Comprimento: 90 cm</strong>
-            <strong>Peso: 1,5 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%20no%20Gládio" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-      </div>
-    </div>
-    
-
-    <div class="categoria">
-      <h3>ESPADAS MILITARES</h3>
-      <p style="text-align:center; max-width:900px; margin:0 auto 30px;">
-        Setor organizado conforme a ordem solicitada: Exército, Marinha, Aeronáutica, Polícias e Bombeiros.
-      </p>
-    </div>
-
-    <div class="categoria">
-      <h3>MILITARES / CERIMONIAIS</h3>
-      <div class="produtos">
-        <div class="produto">
-          <img src="/root/produto_novo_06.jpg" alt="Espada Militar com Gravação" onclick="openModal(this.src)">
-          <h3>Espada Militar com Gravação</h3>
-          <p class="descricao">Espada cerimonial com lâmina gravada e acabamento metálico.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Militar%20com%20Grava%C3%A7%C3%A3o" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_08.jpg" alt="Sabre Militar Cerimonial" onclick="openModal(this.src)">
-          <h3>Sabre Militar Cerimonial</h3>
-          <p class="descricao">Sabre com bainha para cerimônias, formaturas e decoração.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Sabre%20Militar%20Cerimonial" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_09.jpg" alt="Espada Militar Reta" onclick="openModal(this.src)">
-          <h3>Espada Militar Reta</h3>
-          <p class="descricao">Espada reta com acabamento prateado e detalhes ornamentais.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Militar%20Reta" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_12.jpg" alt="Espada Militar com Estojo" onclick="openModal(this.src)">
-          <h3>Espada Militar com Estojo</h3>
-          <p class="descricao">Espada cerimonial apresentada em estojo para coleção.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Militar%20com%20Estojo" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_22.jpg" alt="Espada Cerimonial Detalhada" onclick="openModal(this.src)">
-          <h3>Espada Cerimonial Detalhada</h3>
-          <p class="descricao">Detalhe da empunhadura com acabamento dourado e vermelho.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Cerimonial%20Detalhada" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_25.jpg" alt="Sabre Militar com Guarda" onclick="openModal(this.src)">
-          <h3>Sabre Militar com Guarda</h3>
-          <p class="descricao">Sabre cerimonial com guarda protetora e acabamento metálico.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Sabre%20Militar%20com%20Guarda" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_36.jpg" alt="Sabre Cerimonial em Estojo" onclick="openModal(this.src)">
-          <h3>Sabre Cerimonial em Estojo</h3>
-          <p class="descricao">Sabre com estojo, indicado para apresentação e coleção.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Sabre%20Cerimonial%20em%20Estojo" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="categoria">
-      <h3>AERONÁUTICA</h3>
-      <div class="produtos">
-        <div class="produto">
-          <img src="/root/produto_novo_01.jpg" alt="Espada Aeronáutica Cerimonial" onclick="openModal(this.src)">
-          <h3>Espada Aeronáutica Cerimonial</h3>
-          <p class="descricao">Espada cerimonial com acabamento dourado, empunhadura vermelha e bainha metálica.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Aeron%C3%A1utica%20Cerimonial" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_02.jpg" alt="Espada Aeronáutica com Bainha" onclick="openModal(this.src)">
-          <h3>Espada Aeronáutica com Bainha</h3>
-          <p class="descricao">Modelo cerimonial com bainha e detalhes dourados.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Aeron%C3%A1utica%20com%20Bainha" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_07.jpg" alt="Espada Aeronáutica Vermelha" onclick="openModal(this.src)">
-          <h3>Espada Aeronáutica Vermelha</h3>
-          <p class="descricao">Modelo cerimonial com empunhadura vermelha e acabamento dourado.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Aeron%C3%A1utica%20Vermelha" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_15.jpg" alt="Espada Aeronáutica Detalhe" onclick="openModal(this.src)">
-          <h3>Espada Aeronáutica Detalhe</h3>
-          <p class="descricao">Detalhe de espada cerimonial com acabamento dourado.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Aeron%C3%A1utica%20Detalhe" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_19.jpg" alt="Espada Aeronáutica Completa" onclick="openModal(this.src)">
-          <h3>Espada Aeronáutica Completa</h3>
-          <p class="descricao">Espada cerimonial com bainha e acabamento de alto brilho.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Aeron%C3%A1utica%20Completa" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_23.jpg" alt="Espada Aeronáutica com Brasão" onclick="openModal(this.src)">
-          <h3>Espada Aeronáutica com Brasão</h3>
-          <p class="descricao">Espada cerimonial com emblema central e acabamento dourado.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Aeron%C3%A1utica%20com%20Bras%C3%A3o" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_26.jpg" alt="Espada Aeronáutica Vermelha e Dourada" onclick="openModal(this.src)">
-          <h3>Espada Aeronáutica Vermelha e Dourada</h3>
-          <p class="descricao">Modelo cerimonial com empunhadura vermelha, bainha e detalhes dourados.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Aeron%C3%A1utica%20Vermelha%20e%20Dourada" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="categoria">
-      <h3>POLÍCIAS</h3>
-      <div class="produtos">
-        <div class="produto">
-          <img src="/root/produto_novo_13.jpg" alt="Sabre Cerimonial Policial" onclick="openModal(this.src)">
-          <h3>Sabre Cerimonial Policial</h3>
-          <p class="descricao">Sabre cromado com guarda metálica, indicado para cerimônias e exposição.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Sabre%20Cerimonial%20Policial" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_17.jpg" alt="Sabre Policial Cromado" onclick="openModal(this.src)">
-          <h3>Sabre Policial Cromado</h3>
-          <p class="descricao">Sabre cerimonial com guarda cromada e brasão.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Sabre%20Policial%20Cromado" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_18.jpg" alt="Sabre Cerimonial com Bainha" onclick="openModal(this.src)">
-          <h3>Sabre Cerimonial com Bainha</h3>
-          <p class="descricao">Sabre militar/policial com bainha cromada.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Sabre%20Cerimonial%20com%20Bainha" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_28.jpg" alt="Sabre Policial Detalhe" onclick="openModal(this.src)">
-          <h3>Sabre Policial Detalhe</h3>
-          <p class="descricao">Detalhe de sabre cerimonial com brasão e guarda cromada.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Sabre%20Policial%20Detalhe" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_31.jpg" alt="Sabre Policial com Brasão" onclick="openModal(this.src)">
-          <h3>Sabre Policial com Brasão</h3>
-          <p class="descricao">Sabre cerimonial cromado com brasão em destaque.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Sabre%20Policial%20com%20Bras%C3%A3o" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="categoria">
+    <div class="categoria" id="exercito">
       <h3>EXÉRCITO</h3>
       <div class="produtos">
         <div class="produto">
-          <img src="/root/produto_novo_09.jpg" alt="Espada Militar Reta" onclick="openModal(this.src)">
-          <h3>Espada Militar Clássica</h3>
-          <p class="descricao">Modelo tradicional para cerimônias, decoração e coleção.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Militar%20Classica" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <img src="/root/exercito_espada_cerimonial_ornamental.jpg" alt="Espada Cerimonial Ornamental" onclick="openModal(this.src)">
+          <h3>Espada Cerimonial Ornamental</h3>
+          <p class="descricao">Espada ornamental com detalhes dourados, cabo vermelho e lâmina decorativa.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Espada%20Cerimonial%20Ornamental" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        <div class="produto">
+          <img src="/root/exercito_adaga_aguia.jpg" alt="Adaga Cerimonial com Cabeça de Águia" onclick="openModal(this.src)">
+          <h3>Adaga Cerimonial com Cabeça de Águia</h3>
+          <p class="descricao">Peça ornamental dourada com detalhes vermelhos e acabamento de alto relevo.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Adaga%20Cerimonial%20com%20Cabeça%20de%20Águia" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        <div class="produto">
+          <img src="/root/exercito_espada_reta_detalhe.jpg" alt="Espada Militar Reta" onclick="openModal(this.src)">
+          <h3>Espada Militar Reta</h3>
+          <p class="descricao">Detalhe de espada reta com punho preto e guarda metálica ornamentada.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Espada%20Militar%20Reta" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
       </div>
     </div>
-
-    <div class="categoria">
+    <div class="categoria" id="marinha">
       <h3>MARINHA</h3>
       <div class="produtos">
         <div class="produto">
-          <img src="/root/produto_novo_36.jpg" alt="Sabre Cerimonial" onclick="openModal(this.src)">
-          <h3>Sabre Cerimonial</h3>
-          <p class="descricao">Sabre com acabamento cerimonial para coleção, apresentação e decoração.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Sabre%20Cerimonial" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <img src="/root/marinha_sabre_estojo.jpg" alt="Espada / Sabre Naval em Estojo" onclick="openModal(this.src)">
+          <h3>Espada / Sabre Naval em Estojo</h3>
+          <p class="descricao">Modelo cerimonial com bainha e estojo de apresentação.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Espada%20/%20Sabre%20Naval%20em%20Estojo" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        <div class="produto">
+          <img src="/root/marinha_sabre_longo.jpg" alt="Sabre Cerimonial Naval" onclick="openModal(this.src)">
+          <h3>Sabre Cerimonial Naval</h3>
+          <p class="descricao">Sabre longo com bainha, acabamento preto e dourado para cerimônias.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Sabre%20Cerimonial%20Naval" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
       </div>
     </div>
-
-    <div class="categoria">
-      <h3>BOMBEIROS</h3>
+    <div class="categoria" id="aeronautica">
+      <h3>AERONÁUTICA</h3>
       <div class="produtos">
         <div class="produto">
-          <img src="/root/produto_novo_12.jpg" alt="Espada Cerimonial" onclick="openModal(this.src)">
-          <h3>Espada Cerimonial Bombeiros</h3>
-          <p class="descricao">Modelo cerimonial para formaturas, homenagens, exposição e decoração.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Cerimonial%20Bombeiros" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <img src="/root/aeronautica_espada_com_bainha.jpg" alt="Espada Cerimonial Aeronáutica com Bainha" onclick="openModal(this.src)">
+          <h3>Espada Cerimonial Aeronáutica com Bainha</h3>
+          <p class="descricao">Espada cerimonial com cabo vermelho, guarda dourada e bainha, indicada para solenidades e exposição.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Espada%20Cerimonial%20Aeronáutica%20com%20Bainha" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        <div class="produto">
+          <img src="/root/aeronautica_detalhe_cabo_vermelho.jpg" alt="Detalhe da Espada Aeronáutica" onclick="openModal(this.src)">
+          <h3>Detalhe da Espada Aeronáutica</h3>
+          <p class="descricao">Detalhe do cabo vermelho, guarda dourada e acabamento ornamental da espada cerimonial.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Detalhe%20da%20Espada%20Aeronáutica" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        <div class="produto">
+          <img src="/root/aeronautica_detalhe_lamina.jpg" alt="Espada Aeronáutica Detalhe da Lâmina" onclick="openModal(this.src)">
+          <h3>Espada Aeronáutica Detalhe da Lâmina</h3>
+          <p class="descricao">Modelo cerimonial com gravação na lâmina, cabo vermelho e brasão central.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Espada%20Aeronáutica%20Detalhe%20da%20Lâmina" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        <div class="produto">
+          <img src="/root/aeronautica_espada_vermelha_bainha.jpg" alt="Espada Aeronáutica Vermelha com Bainha" onclick="openModal(this.src)">
+          <h3>Espada Aeronáutica Vermelha com Bainha</h3>
+          <p class="descricao">Espada cerimonial com bainha e acabamento dourado, ideal para apresentação institucional.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Espada%20Aeronáutica%20Vermelha%20com%20Bainha" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
       </div>
     </div>
-
-    <div class="categoria">
+    <div class="categoria" id="policias">
+      <h3>POLÍCIAS</h3>
+      <div class="produtos">
+        <div class="produto">
+          <img src="/root/policia_sabre_detalhe_lamina.jpg" alt="Sabre Cerimonial Policial" onclick="openModal(this.src)">
+          <h3>Sabre Cerimonial Policial</h3>
+          <p class="descricao">Sabre cerimonial com guarda metálica e gravação na lâmina.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Sabre%20Cerimonial%20Policial" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        <div class="produto">
+          <img src="/root/policia_sabre_guarda_01.jpg" alt="Sabre Policial com Guarda Prateada" onclick="openModal(this.src)">
+          <h3>Sabre Policial com Guarda Prateada</h3>
+          <p class="descricao">Sabre de cerimônia com guarda prateada e bainha cromada.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Sabre%20Policial%20com%20Guarda%20Prateada" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        <div class="produto">
+          <img src="/root/policia_sabre_guarda_02.jpg" alt="Detalhe do Sabre Policial" onclick="openModal(this.src)">
+          <h3>Detalhe do Sabre Policial</h3>
+          <p class="descricao">Detalhe da guarda metálica polida com cabo preto.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Detalhe%20do%20Sabre%20Policial" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        <div class="produto">
+          <img src="/root/policia_sabre_brasao.jpg" alt="Sabre Policial com Brasão" onclick="openModal(this.src)">
+          <h3>Sabre Policial com Brasão</h3>
+          <p class="descricao">Sabre com guarda cromada e brasão em destaque.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Sabre%20Policial%20com%20Brasão" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        <div class="produto">
+          <img src="/root/policia_sabre_cruzado.jpg" alt="Sabre Cerimonial Cromado" onclick="openModal(this.src)">
+          <h3>Sabre Cerimonial Cromado</h3>
+          <p class="descricao">Imagem de detalhe do sabre com bainha cromada e guarda institucional.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Sabre%20Cerimonial%20Cromado" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        <div class="produto">
+          <img src="/root/policia_sabre_reto_bainha.jpg" alt="Sabre Militar com Bainha" onclick="openModal(this.src)">
+          <h3>Sabre Militar com Bainha</h3>
+          <p class="descricao">Sabre cerimonial completo com bainha, acabamento preto e dourado.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Sabre%20Militar%20com%20Bainha" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        <div class="produto">
+          <img src="/root/policia_sabre_cabo_preto.jpg" alt="Sabre de Solenidade" onclick="openModal(this.src)">
+          <h3>Sabre de Solenidade</h3>
+          <p class="descricao">Modelo com empunhadura preta e guarda metálica para uso cerimonial.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Sabre%20de%20Solenidade" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+      </div>
+    </div>
+    <div class="categoria" id="bombeiros">
+      <h3>BOMBEIROS</h3>
+      <div class="produtos">
+        <div class="produto produto-aviso">
+          <h3>Espadas de Bombeiros</h3>
+          <p class="descricao">Setor reservado para peças de bombeiros. Nenhuma foto maçônica foi colocada aqui.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Espadas%20de%20Bombeiros" class="whatsapp-link" target="_blank">Consultar</a>
+        </div>
+      </div>
+    </div>
+    <div class="categoria" id="maconaria">
       <h3>MAÇONARIA</h3>
       <div class="produtos">
         <div class="produto">
-          <img src="/root/produto_novo_03.jpg" alt="Espada Maçônica Reta" onclick="openModal(this.src)">
-          <h3>Espada Maçônica Reta</h3>
-          <p class="descricao">Espada reta simbólica para uso cerimonial maçônico.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Ma%C3%A7%C3%B4nica%20Reta" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_04.jpg" alt="Espada Maçônica com Guarda Dourada" onclick="openModal(this.src)">
-          <h3>Espada Maçônica com Guarda Dourada</h3>
-          <p class="descricao">Modelo cerimonial maçônico com cruzeta trabalhada.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Ma%C3%A7%C3%B4nica%20com%20Guarda%20Dourada" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_10.jpg" alt="Espada Flamígera do Venerável" onclick="openModal(this.src)">
+          <img src="/root/maconaria_flamigera_01.jpg" alt="Espada Flamígera do Venerável" onclick="openModal(this.src)">
           <h3>Espada Flamígera do Venerável</h3>
-          <p class="descricao">Espada flamígera cerimonial com lâmina ondulada, usada simbolicamente em contexto maçônico.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Flam%C3%ADgera%20do%20Vener%C3%A1vel" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <p class="descricao">Espada maçônica de lâmina ondulada, utilizada como peça simbólica e cerimonial.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Espada%20Flamígera%20do%20Venerável" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
         <div class="produto">
-          <img src="/root/produto_novo_16.jpg" alt="Espada Maçônica Reta com Capa" onclick="openModal(this.src)">
-          <h3>Espada Maçônica Reta com Capa</h3>
-          <p class="descricao">Espada maçônica reta com capa verde para transporte e conservação.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Ma%C3%A7%C3%B4nica%20Reta%20com%20Capa" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_32.jpg" alt="Espada Flamígera Maçônica" onclick="openModal(this.src)">
+          <img src="/root/maconaria_flamigera_02.jpg" alt="Espada Flamígera Maçônica" onclick="openModal(this.src)">
           <h3>Espada Flamígera Maçônica</h3>
-          <p class="descricao">Espada flamígera com lâmina ondulada para cerimônias simbólicas.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Flam%C3%ADgera%20Ma%C3%A7%C3%B4nica" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <p class="descricao">Modelo flamígero com cabo vermelho, detalhes dourados e lâmina ondulada.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Espada%20Flamígera%20Maçônica" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
         <div class="produto">
-          <img src="/root/produto_novo_35.jpg" alt="Espada Maçônica com Símbolos" onclick="openModal(this.src)">
-          <h3>Espada Maçônica com Símbolos</h3>
-          <p class="descricao">Espada cerimonial maçônica com símbolos na guarda.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Ma%C3%A7%C3%B4nica%20com%20S%C3%ADmbolos" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <img src="/root/maconaria_flamigera_detalhe.jpg" alt="Detalhe da Espada Flamígera" onclick="openModal(this.src)">
+          <h3>Detalhe da Espada Flamígera</h3>
+          <p class="descricao">Detalhe do acabamento da espada flamígera maçônica com ornamentos dourados.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Detalhe%20da%20Espada%20Flamígera" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
         <div class="produto">
-          <img src="/root/produto_novo_37.jpg" alt="Espada Flamígera do Venerável" onclick="openModal(this.src)">
-          <h3>Espada Flamígera do Venerável</h3>
-          <p class="descricao">Modelo flamígero com acabamento dourado e vermelho.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Flam%C3%ADgera%20do%20Vener%C3%A1vel" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <img src="/root/maconaria_espada_reta_estojo.jpg" alt="Espada Reta do Venerável" onclick="openModal(this.src)">
+          <h3>Espada Reta do Venerável</h3>
+          <p class="descricao">Espada reta maçônica com punho preto e guarda ornamental, apresentada com suporte protetor.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Espada%20Reta%20do%20Venerável" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
         <div class="produto">
-          <img src="/root/produto_novo_38.jpg" alt="Espada Flamígera Maçônica Detalhe" onclick="openModal(this.src)">
-          <h3>Espada Flamígera Maçônica Detalhe</h3>
-          <p class="descricao">Modelo flamígero em ângulo para catálogo.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Espada%20Flam%C3%ADgera%20Ma%C3%A7%C3%B4nica%20Detalhe" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <img src="/root/maconaria_espada_reta_vermelho.jpg" alt="Espada Reta Maçônica" onclick="openModal(this.src)">
+          <h3>Espada Reta Maçônica</h3>
+          <p class="descricao">Modelo reto com símbolos maçônicos na guarda, cabo preto e acabamento prateado.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Espada%20Reta%20Maçônica" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        <div class="produto">
+          <img src="/root/maconaria_espada_reta_corpo_inteiro.jpg" alt="Espada Maçônica Reta" onclick="openModal(this.src)">
+          <h3>Espada Maçônica Reta</h3>
+          <p class="descricao">Espada reta cerimonial com detalhes na guarda e cabo preto.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Espada%20Maçônica%20Reta" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        <div class="produto">
+          <img src="/root/maconaria_detalhe_guarda_dourada.jpg" alt="Detalhe da Guarda Maçônica" onclick="openModal(this.src)">
+          <h3>Detalhe da Guarda Maçônica</h3>
+          <p class="descricao">Detalhe dourado da guarda com símbolos ornamentais.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Detalhe%20da%20Guarda%20Maçônica" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        <div class="produto">
+          <img src="/root/maconaria_detalhe_simbolo.jpg" alt="Detalhe Simbólico Maçônico" onclick="openModal(this.src)">
+          <h3>Detalhe Simbólico Maçônico</h3>
+          <p class="descricao">Close da guarda com acabamento dourado e símbolos cerimoniais.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Detalhe%20Simbólico%20Maçônico" class="whatsapp-link" target="_blank">Saiba mais</a>
+        </div>
+        <div class="produto">
+          <img src="/root/maconaria_punho_detalhe.jpg" alt="Punho de Espada Maçônica" onclick="openModal(this.src)">
+          <h3>Punho de Espada Maçônica</h3>
+          <p class="descricao">Detalhe do punho preto e guarda dourada da espada cerimonial.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Punho%20de%20Espada%20Maçônica" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
       </div>
     </div>
-
-    <div class="categoria">
-      <h3>ORDENS E PEÇAS CERIMONIAIS</h3>
+    <div class="categoria" id="acessorios-cerimoniais">
+      <h3>ACESSÓRIOS CERIMONIAIS</h3>
       <div class="produtos">
         <div class="produto">
-          <img src="/root/produto_novo_21.jpg" alt="Fiel / Cordão Cerimonial Amarelo" onclick="openModal(this.src)">
+          <img src="/root/acessorio_fiel_cordao_amarelo.jpg" alt="Fiel / Cordão Cerimonial Amarelo" onclick="openModal(this.src)">
           <h3>Fiel / Cordão Cerimonial Amarelo</h3>
-          <p class="descricao">Acessório decorativo utilizado em espadas e sabres cerimoniais.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Fiel%20/%20Cord%C3%A3o%20Cerimonial%20Amarelo" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        <div class="produto">
-          <img src="/root/produto_novo_27.jpg" alt="Fiel / Cordão Cerimonial" onclick="openModal(this.src)">
-          <h3>Fiel / Cordão Cerimonial</h3>
-          <p class="descricao">Cordão cerimonial dourado/amarelo para espada ou sabre.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Fiel%20/%20Cord%C3%A3o%20Cerimonial" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <p class="descricao">Acessório cerimonial para composição de espadas e uniformes de gala.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Fiel%20/%20Cordão%20Cerimonial%20Amarelo" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
       </div>
     </div>
-
-    <div class="categoria">
+    <div class="categoria" id="componentes-historicos-e-colecionaveis">
       <h3>COMPONENTES HISTÓRICOS E COLECIONÁVEIS</h3>
       <div class="produtos">
         <div class="produto">
-          <img src="/root/produto_novo_05.jpg" alt="Carregador Colecionável CZ .22" onclick="openModal(this.src)">
-          <h3>Carregador Colecionável CZ .22</h3>
-          <p class="descricao">Peça para coleção, reposição ou restauração, conforme legislação aplicável.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Carregador%20Colecion%C3%A1vel%20CZ%20.22" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <img src="/root/componente_carregador_cz22_01.jpg" alt="Carregador Carabina CZ .22" onclick="openModal(this.src)">
+          <h3>Carregador Carabina CZ .22</h3>
+          <p class="descricao">Peça apresentada em setor separado de componentes históricos e colecionáveis. Verifique a legislação aplicável antes de qualquer negociação.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Carregador%20Carabina%20CZ%20.22" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
         <div class="produto">
-          <img src="/root/produto_novo_11.jpg" alt="Carregador Colecionável Curto" onclick="openModal(this.src)">
-          <h3>Carregador Colecionável Curto</h3>
-          <p class="descricao">Peça colecionável para reposição/restauração, conforme legislação aplicável.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Carregador%20Colecion%C3%A1vel%20Curto" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <img src="/root/componente_carregador_cz22_02.jpg" alt="Carregador CZ .22 - Vista Lateral" onclick="openModal(this.src)">
+          <h3>Carregador CZ .22 - Vista Lateral</h3>
+          <p class="descricao">Peça apresentada em setor separado de componentes históricos e colecionáveis. Verifique a legislação aplicável antes de qualquer negociação.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Carregador%20CZ%20.22%20-%20Vista%20Lateral" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
         <div class="produto">
-          <img src="/root/produto_novo_14.jpg" alt="Carregador Colecionável Metálico" onclick="openModal(this.src)">
-          <h3>Carregador Colecionável Metálico</h3>
-          <p class="descricao">Peça metálica para coleção/restauração, conforme legislação aplicável.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Carregador%20Colecion%C3%A1vel%20Met%C3%A1lico" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <img src="/root/componente_carregadores_cz22_duplo.jpg" alt="Carregadores CZ .22" onclick="openModal(this.src)">
+          <h3>Carregadores CZ .22</h3>
+          <p class="descricao">Peça apresentada em setor separado de componentes históricos e colecionáveis. Verifique a legislação aplicável antes de qualquer negociação.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Carregadores%20CZ%20.22" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
         <div class="produto">
-          <img src="/root/produto_novo_20.jpg" alt="Carregador Colecionável" onclick="openModal(this.src)">
-          <h3>Carregador Colecionável</h3>
-          <p class="descricao">Peça para coleção ou restauração, conforme legislação aplicável.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Carregador%20Colecion%C3%A1vel" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <img src="/root/componente_carregador_cz22_03.jpg" alt="Carregador CZ .22 - Detalhe" onclick="openModal(this.src)">
+          <h3>Carregador CZ .22 - Detalhe</h3>
+          <p class="descricao">Peça apresentada em setor separado de componentes históricos e colecionáveis. Verifique a legislação aplicável antes de qualquer negociação.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Carregador%20CZ%20.22%20-%20Detalhe" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
         <div class="produto">
-          <img src="/root/produto_novo_24.jpg" alt="Carregador Colecionável CZ .22" onclick="openModal(this.src)">
-          <h3>Carregador Colecionável CZ .22</h3>
-          <p class="descricao">Peça para coleção/restauração, conforme legislação aplicável.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Carregador%20Colecion%C3%A1vel%20CZ%20.22" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <img src="/root/componente_carregador_cz22_04.jpg" alt="Carregador CZ .22 - Outro Ângulo" onclick="openModal(this.src)">
+          <h3>Carregador CZ .22 - Outro Ângulo</h3>
+          <p class="descricao">Peça apresentada em setor separado de componentes históricos e colecionáveis. Verifique a legislação aplicável antes de qualquer negociação.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Carregador%20CZ%20.22%20-%20Outro%20Ângulo" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
         <div class="produto">
-          <img src="/root/produto_novo_29.jpg" alt="Carregador Colecionável Vista Lateral" onclick="openModal(this.src)">
-          <h3>Carregador Colecionável Vista Lateral</h3>
-          <p class="descricao">Peça fotografada em ângulo lateral para catálogo.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Carregador%20Colecion%C3%A1vel%20Vista%20Lateral" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <img src="/root/componente_carregador_luger_p08.jpg" alt="Carregador Pistola Luger P08 Hager" onclick="openModal(this.src)">
+          <h3>Carregador Pistola Luger P08 Hager</h3>
+          <p class="descricao">Peça apresentada em setor separado de componentes históricos e colecionáveis. Verifique a legislação aplicável antes de qualquer negociação.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Carregador%20Pistola%20Luger%20P08%20Hager" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
         <div class="produto">
-          <img src="/root/produto_novo_30.jpg" alt="Carregador Colecionável CZ .22 Vista Superior" onclick="openModal(this.src)">
-          <h3>Carregador Colecionável CZ .22 Vista Superior</h3>
-          <p class="descricao">Peça de coleção/restauração com vista superior.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Carregador%20Colecion%C3%A1vel%20CZ%20.22%20Vista%20Superior" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <img src="/root/componente_carregador_luger_p08_02.jpg" alt="Carregador Luger P08 - Vista Traseira" onclick="openModal(this.src)">
+          <h3>Carregador Luger P08 - Vista Traseira</h3>
+          <p class="descricao">Peça apresentada em setor separado de componentes históricos e colecionáveis. Verifique a legislação aplicável antes de qualquer negociação.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Carregador%20Luger%20P08%20-%20Vista%20Traseira" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
         <div class="produto">
-          <img src="/root/produto_novo_33.jpg" alt="Carregador Colecionável Curvo" onclick="openModal(this.src)">
-          <h3>Carregador Colecionável Curvo</h3>
-          <p class="descricao">Peça colecionável para restauração, conforme legislação aplicável.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Carregador%20Colecion%C3%A1vel%20Curvo" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <img src="/root/componente_carregador_cz22_05.jpg" alt="Carregador CZ .22 - Vista Frontal" onclick="openModal(this.src)">
+          <h3>Carregador CZ .22 - Vista Frontal</h3>
+          <p class="descricao">Peça apresentada em setor separado de componentes históricos e colecionáveis. Verifique a legislação aplicável antes de qualquer negociação.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Carregador%20CZ%20.22%20-%20Vista%20Frontal" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
         <div class="produto">
-          <img src="/root/produto_novo_34.jpg" alt="Carregador Colecionável Baixo" onclick="openModal(this.src)">
-          <h3>Carregador Colecionável Baixo</h3>
-          <p class="descricao">Peça para coleção/restauração com perfil baixo.</p>
-          <a href="https://wa.me/5513991585648?text=Tenho%20interesse%20em%20Carregador%20Colecion%C3%A1vel%20Baixo" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="categoria">
-      <h3>Armaduras</h3>
-      <div class="produtos">
-        <div class="produto">
-          <img src="/root/17.jpg" alt="Armadura Envelhecida" onclick="openModal(this.src)">
-          <h3>Armadura Medieval Envelhecida</h3>
-          <p class="descricao">Armadura completa em aço carbono ou inoxidável, com placas articuladas para corte, torneios e batalhas.</p>
-          <div class="especificacoes">
-            <strong>Comprimento: 190 cm</strong>
-            <strong>Peso: 25 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20Envelhecida" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        
-        <div class="produto">
-          <img src="/root/18.jpg" alt="Escudo Brasão de Família" onclick="openModal(this.src)">
-          <h3>Escudo Brasão de Família</h3>
-          <p class="descricao">Escudo personalizado com brasão, ideal para decoração ou uso cerimonial.</p>
-          <div class="especificacoes">
-            <strong>Comprimento: 60 cm</strong>
-            <strong>Peso: 15 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%20no%20Escudo%20Brasão%20de%20Família" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-
-        <div class="produto">
-          <img src="/root/50.jpg" alt="Armadura inox" onclick="openModal(this.src)">
-          <h3>Armadura Medieval inox</h3>
-          <p class="descricao">Armadura Medieval com gravaçao em aço inox para áreas externas.</p>
-          <div class="especificacoes">
-            <strong>Comprimento: 190 cm</strong>
-            <strong>Peso: 25 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%na%armadura%medieval%inox" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-
-        <div class="produto">
-          <img src="/root/n.6.jpg" alt="Armadura Europeia com Alabarda" onclick="openModal(this.src)">
-          <h3>Armadura Europeia com Alabarda N.6</h3>
-          <p class="descricao">Armadura completa equipada com alabarda, típica de guardas cerimoniais europeus.</p>
-          <div class="especificacoes">
-            <strong>Altura: 190 cm</strong>
-            <strong>Peso: 27 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20com%20Alabarda%20N.6" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-
-        <div class="produto">
-          <img src="/root/n.7.jpg" alt="Armadura Europeia com Alabarda" onclick="openModal(this.src)">
-          <h3>Armadura Europeia com Alabarda N.7</h3>
-          <p class="descricao">Armadura europeia tradicional com alabarda, perfeita para halls, castelos e fortalezas.</p>
-          <div class="especificacoes">
-            <strong>Altura: 190 cm</strong>
-            <strong>Peso: 27 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20com%20Alabarda%20N.7" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-
-        <div class="produto">
-          <img src="/root/n.8.jpg" alt="Armadura Europeia com Espada e Escudo" onclick="openModal(this.src)">
-          <h3>Armadura Europeia com Espada e Escudo N.8</h3>
-          <p class="descricao">Armadura completa segurando espada e escudo, inspirada em cavaleiros do final da Idade Média.</p>
-          <div class="especificacoes">
-            <strong>Altura: 190 cm</strong>
-            <strong>Peso: 30 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20com%20Espada%20e%20Escudo%20N.8" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-
-        <div class="produto">
-          <img src="/root/n.9.jpg" alt="Armadura Europeia com Espada" onclick="openModal(this.src)">
-          <h3>Armadura Europeia com Espada N.9</h3>
-          <p class="descricao">Armadura clássica empunhando espada medieval, ideal para coleções e ambientes temáticos.</p>
-          <div class="especificacoes">
-            <strong>Altura: 190 cm</strong>
-            <strong>Peso: 25 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20com%20Espada%20N.9" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-
-        <div class="produto">
-          <img src="/root/n.10.jpg" alt="Armadura Europeia com Espada" onclick="openModal(this.src)">
-          <h3>Armadura Europeia com Espada N.10</h3>
-          <p class="descricao">Armadura europeia completa, segurando espada reta medieval. Ideal para halls e exposições.</p>
-          <div class="especificacoes">
-            <strong>Altura: 190 cm</strong>
-            <strong>Peso: 26 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20com%20Espada%20N.10" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-
-        <div class="produto">
-          <img src="/root/14.jpg" alt="Armadura Polida" onclick="openModal(this.src)">
-          <h3>Armadura Medieval Polida</h3>
-          <p class="descricao">Armadura completa em aço carbono ou inoxidável, com acabamento polido para corte e torneios.</p>
-          <div class="especificacoes">
-            <strong>Comprimento: 190 cm</strong>
-            <strong>Peso: 25 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%20na%20Armadura%20Polida" class="whatsapp-link" target="_blank">Saiba mais</a>
-        </div>
-        
-        <div class="produto">
-          <img src="/root/13.jpg" alt="Elmo Medieval" onclick="openModal(this.src)">
-          <h3>Elmo Medieval</h3>
-          <p class="descricao">Capacete medieval com viseira móvel, ideal para proteção em combates e cerimônias.</p>
-          <div class="especificacoes">
-            <strong>Comprimento: 50 cm</strong>
-            <strong>Peso: 1 kg</strong>
-          </div>
-          <a href="https://wa.me/5513991585648?text=Interesse%20no%20Elmo%20Sallet" class="whatsapp-link" target="_blank">Saiba mais</a>
+          <img src="/root/componente_carregador_cz22_06.jpg" alt="Carregador CZ .22 - Perfil" onclick="openModal(this.src)">
+          <h3>Carregador CZ .22 - Perfil</h3>
+          <p class="descricao">Peça apresentada em setor separado de componentes históricos e colecionáveis. Verifique a legislação aplicável antes de qualquer negociação.</p>
+          <a href="https://wa.me/5513991585648?text=Interesse%20em%20Carregador%20CZ%20.22%20-%20Perfil" class="whatsapp-link" target="_blank">Saiba mais</a>
         </div>
       </div>
     </div>
   </section>
-
   <section id="clientes">
     <h2>Clientes</h2>
-    <p>
-      A Arsenal Medieval atende militares, colecionadores, hotéis temáticos, clubes, castelos, fortalezas, museus, instituições militares e órgãos governamentais.
-      Produzimos espadas, armaduras e peças históricas artesanais para decoração, cerimônias, colecionismo, restauração e projetos personalizados.
-    </p>
+    <p>A Arsenal Medieval atende militares, colecionadores, hotéis temáticos, clubes, castelos, fortalezas, museus, instituições militares e órgãos governamentais.</p>
+    <p>Produzimos espadas, armaduras e peças históricas artesanais para decoração, cerimônias, colecionismo, restauração e projetos personalizados.</p>
   </section>
-
   <section id="contato">
     <h2>Contato</h2>
-    <p>
-      📞 Telefone: <a href="https://wa.me/5513991585648" target="_blank">(13) 99158-5648</a><br>
-      👤 Tratar com: Jaqueline Vendas<br>
-      📍 Endereço: Av. Rodrigues Alves, 177<br>
-      Santos - SP, CEP 11015-201
-    </p>
+    <p>📞 Telefone: <a href="https://wa.me/5513991585648" target="_blank">(13) 99158-5648</a><br>👤 Tratar com: Jaqueline Vendas<br>📍 Endereço: Av. Rodrigues Alves, 177<br>Santos - SP, CEP 11015-201</p>
   </section>
-
-  <footer>
-    <p>© 2025 Arsenal Medieval - Todos os direitos reservados.</p>
-  </footer>
-
-  <div id="imageModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modalImg">
-  </div>
-
+  <footer><p>© 2025 Arsenal Medieval - Todos os direitos reservados.</p></footer>
+  <div id="imageModal" class="modal"><span class="close" onclick="closeModal()">&times;</span><img class="modal-content" id="modalImg"></div>
   <script>
-    function openModal(src) {
-      var modal = document.getElementById("imageModal");
-      var modalImg = document.getElementById("modalImg");
-      modal.style.display = "block";
-      modalImg.src = src;
-    }
-
-    function closeModal() {
-      var modal = document.getElementById("imageModal");
-      modal.style.display = "none";
-    }
-
-    var modal = document.getElementById("imageModal");
-    modal.onclick = function(event) {
-      if (event.target == modal) {
-        closeModal();
-      }
-    }
-
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        closeModal();
-      }
-    });
+    function openModal(src){document.getElementById('imageModal').style.display='block';document.getElementById('modalImg').src=src;}
+    function closeModal(){document.getElementById('imageModal').style.display='none';}
+    var modal=document.getElementById('imageModal');modal.onclick=function(e){if(e.target==modal)closeModal();};document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
   </script>
 </body>
 </html>
